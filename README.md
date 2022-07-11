@@ -19,3 +19,9 @@ This is a project of team B.A.Y. for SSG104-SU22
   <li>Blog content: blog_content</li>
   <li>Info content: info_content</li>
 </ul>
+
+### Libraries/Packages used
+<ul>
+  <li>Twitter Boostraps</li>
+  <li>JQuery</li>
+</ul>
