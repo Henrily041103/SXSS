@@ -8,26 +8,31 @@ document.addEventListener("DOMContentLoaded", () => {
     var main_menu = document.getElementById("main_menu");
     var options = document.getElementById("options");
     var content = document.getElementById("content");
+    var current_focus;
 
     function openBlog() {
         blog_content.style.display="flex";
         info_content.style.display="none";
+        current_focus = blog_mode;
     }
     function openInfo() {
         info_content.style.display ="flex";
         blog_content.style.display ="none";
+        current_focus = info_mode;
     }
     function openZoomin(){
         main_menu.style.display ="none";
         content.className = "col-sm-12";
         zoom_out.style.display = "flex";
         zoom_in.style.display = "none";
+        current_focus.focus();
     }
     function openZoomout(){
         main_menu.style.display = "flex";
         content.className = "col-sm-9";
         zoom_out.style.display = "none";
         zoom_in.style.display = "flex";
+        current_focus.focus();
     }
     function options(){
 
@@ -38,5 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
     zoom_out.addEventListener("click", openZoomout);
 
     blog_mode.click();
+    blog_mode.focus();
     zoom_out.click();
 })

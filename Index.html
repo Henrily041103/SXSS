@@ -16,10 +16,11 @@
     <link rel="stylesheet" href="CSS/Hompage_styles.css">
 </head>
 
-<header>
+<header class="fixed_header">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-11"> <img src="https://i.im.ge/2022/07/16/FXZmZx.png" style="width:100px  ;"  id="group_logo"></div>
+            <div class="col-lg-3"> <img src="https://i.im.ge/2022/07/16/FXZmZx.png" style="width:100px"  id="group_logo"></div>
+            <div class="col-lg-8"> <img src="Assets/Logos/Title-button-removebg-preview.png" id="title"> </div>
             <div class="col-lg-1 my-custom-col justify-content-end align-content-end"><button>Options</button></div>
         </div>
     </div>
@@ -29,22 +30,35 @@
     <div class="container-fluid">
         <div class="row" >
             <div class="col-sm-3" id="main_menu">
-                <span>Menu</span>
+                <span><img src="Assets/Logos/Menu-button-removebg-preview.png" id="menu_logo"></span>
             </div>
                 
             <div class="col-sm-9" id="content">
-                <div class="row">
-                    <div class="col" id="blog"><button type="button" class="btn btn-primary btn-lg btn-block">Blog</button></div>
-                    <div class="col" id="info"><button type="button" class="btn btn-primary btn-lg btn-block">Information</button></div>
+                <div class="row" id = "modes">
+                    <div class="col" >
+                        <button type="button" class="btn btn-primary btn-lg btn-block" id="blog">
+                            <img src= "Assets/Logos/Blog-button_before-removebg-preview.png" id="blog_logo">
+                        </button>
+                    </div>
+                    <div class="col" >
+                        <button type="button" class="btn btn-primary btn-lg btn-block" id="info">
+                            <img src="Assets/Logos/Info-button-removebg-preview.png" id="info_logo">
+                        </button>
+                    </div>
+                </div>
+                <div id="buttons">
+                    <button type="button" class="btn-primary" id="zoom_in">
+                        <img src="Assets/Logos/Zoom_in-button-removebg-preview.png" id="in">
+                    </button>
+                    <button type="button" class="btn-primary" id="zoom_out">
+                        <img src="Assets/Logos/Zoom_out-button-removebg-preview.png" id="out">
+                    </button>
                 </div>
                 <div id="main_stuff">
                     <div id="blog_window">blog</div>
                     <div id="info_window">infor</div>
                 </div>
-                <div id="buttons">
-                    <button type="button" class="btn-primary" id="zoom_in">-></button>
-                    <button type="button" class="btn-primary" id="zoom_out">&lt-</button>
-                </div>
+                
             </div>
         </div>
     </div>
