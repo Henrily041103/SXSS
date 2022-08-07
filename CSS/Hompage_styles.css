@@ -22,11 +22,8 @@ header {
 
 #buttons {
     position: fixed;
-    margin-top: -40%;
+    margin-top: -30%;
     z-index: 9;
-}
-#zoom_out {
-    margin-top: 20vh;
 }
 #main_stuff {
     height: 100vh;
