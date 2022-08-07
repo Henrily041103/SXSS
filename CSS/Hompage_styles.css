@@ -22,9 +22,6 @@ header {
 
 #buttons {
     position: fixed;
-    margin-top: -30%;
+    margin-top: 15%;
     z-index: 9;
-}
-#main_stuff {
-    height: 100vh;
 }
