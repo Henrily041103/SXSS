@@ -3,7 +3,7 @@ body {
 }
 
 header {
-    background-color: rgb(0, 162, 232);
+    background-color: rgb(0, 165, 255);
     border-radius: 0.5%;
     padding-top: 2%;
     border-width: 5px;
@@ -30,6 +30,7 @@ header {
 }
 #zoom_in, #zoom_out {
     width: 30%;
+    background-color: azure;
 }
 
 #title {
