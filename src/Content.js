@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-// import './Content.css';
+import './Content.css';
 import {recipes} from "./RecipeLoader.js";
 import Routing from './Routing';
-import {useRef} from 'react';
+// import {useRef} from 'react';
 import menu_logo from "./Assets/Logos/Menu-button-removebg-preview.png" ;
 import blog_logo from "./Assets/Logos/Blog-button_before-removebg-preview.png";
 import info_logo from "./Assets/Logos/Info-button-removebg-preview.png";
@@ -14,7 +14,7 @@ function MainContent() {
   var recipes_list = [];
 
   recipes.forEach((recipe, index) => {
-    recipes_list.push(<li key = {index}><Link to={"/recipes/" + recipe.id}>{recipe.name}</Link></li>);
+    recipes_list.push(<li key = {index}><Link className='recipe_link' to={"/recipes/" + recipe.id}>{recipe.name}</Link></li>);
   })
 
   return (
@@ -23,7 +23,7 @@ function MainContent() {
         <div className="row" >
             <div className="col-sm-3" id="main_menu">
                 <span><img src={menu_logo} id="menu_logo"/></span>
-                <ul>
+                <ul id='menu_list'>
                   {recipes_list}
                 </ul>
             </div>
@@ -51,7 +51,8 @@ function MainContent() {
                           var zoom_out= document.getElementById("zoom_out");
                           var main_menu = document.getElementById("main_menu");
                           var content = document.getElementById("content");
-                          scripts.openZoomin(main_menu, content, zoom_in, zoom_out);
+                          var menu_list = document.getElementById("menu_list");
+                          scripts.openZoomin(main_menu, menu_list, content, zoom_in, zoom_out);
                         }}>
                         <img src={zoom_in} id="in"/>
                     </button>
@@ -60,7 +61,8 @@ function MainContent() {
                           var zoom_out= document.getElementById("zoom_out");
                           var main_menu = document.getElementById("main_menu");
                           var content = document.getElementById("content");
-                          scripts.openZoomout(main_menu, content, zoom_in, zoom_out);
+                          var menu_list = document.getElementById("menu_list");
+                          scripts.openZoomout(main_menu, menu_list, content, zoom_in, zoom_out);
                         }}>
                         <img src={zoom_out} id="out"/>
                     </button>
