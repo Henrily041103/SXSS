@@ -5,18 +5,25 @@ function getRecipe(ID) {
     var rec;
     recipes.forEach((recipe) => {
         if (ID == recipe.id) {
-            console.log(1);
             rec = recipe;
         }
     })
     return rec;
 }
 
+function splitter(str, pattern) {
+    var str_raw = str.substring(2, str.length-2).split(pattern);
+    var s =[]
+    str_raw.forEach((element, index) => {
+        s.push(<li key={index}>{element}</li>);
+    });
+    return s;
+}
+
 function RecipeGenerator() {
     const {id} = useParams();
     
     var recipe = getRecipe(id);
-    // console.log(recipe);
     return (
         <div id="RecipeContainer">
             <h1>{recipe.name}</h1>
@@ -24,23 +31,11 @@ function RecipeGenerator() {
             <div>Khẩu phần: {recipe.Serves}</div>
             <div>Nguyên liệu:</div>
             <ul>
-                {() => {
-                    var ing = [];
-                    recipe.Ingredients.forEach((element, index) => {
-                        ing.push(<li key={index}>element</li>);
-                    });
-                    return ing;
-                }}
+                {splitter(recipe.Ingredients, "', '")}
             </ul>
             <div>Cách làm:</div>
             <ul>
-                {() => {
-                    var dir = [];
-                    recipe.Directions.forEach((element, index) => {
-                        dir.push(<li key={index}>element</li>);
-                    });
-                    return dir;
-                }}
+                {splitter(recipe.Directions, "','")}
             </ul>
         </div>
     );
