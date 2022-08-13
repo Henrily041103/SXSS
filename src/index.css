@@ -37,6 +37,7 @@ header {
 #zoom_in, #zoom_out {
   width: 30%;
   background-color: azure;
+  display: flex;
 }
 
 #title {
@@ -59,4 +60,8 @@ header {
 .fixed_header {
   width: 100%;
   top: 0;
+}
+
+#zoom_out {
+  display: none;
 }
