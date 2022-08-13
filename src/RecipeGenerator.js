@@ -15,7 +15,7 @@ function splitter(str, pattern) {
     var str_raw = str.substring(2, str.length-2).split(pattern);
     var s =[]
     str_raw.forEach((element, index) => {
-        s.push(<li key={index}>{element}</li>);
+        if (!element.match(pattern)) {s.push(<li key={index}>{element}</li>);}
     });
     return s;
 }
@@ -31,11 +31,11 @@ function RecipeGenerator() {
             <div>Khẩu phần: {recipe.Serves}</div>
             <div>Nguyên liệu:</div>
             <ul>
-                {splitter(recipe.Ingredients, "', '")}
+                {splitter(recipe.Ingredients, /(','|', ')/)}
             </ul>
             <div>Cách làm:</div>
             <ul>
-                {splitter(recipe.Directions, "','")}
+                {splitter(recipe.Directions, /(','|', ')/)}
             </ul>
         </div>
     );
